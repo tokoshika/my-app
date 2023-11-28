@@ -17,3 +17,7 @@ li {
   text-decoration: none;
   margin-right: 1rem;
 }
+
+.title {
+  color: rgb(15, 143, 100);
+}

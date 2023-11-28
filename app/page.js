@@ -5,34 +5,19 @@ export default function IndexPage() {
   const url = "https://jsonplaceholder.typicode.com/users";
   const [users, setUsers] = useState("");
 
-  // const getApi = async () => {
-  //   await fetch(url)
-  //     .then((res) => res.json())
-  //     .then((json) => console.log(json));
-  // };
-
   const getApi = async () => {
     await fetch(url)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   };
-  console.log(users);
 
   useEffect(() => {
     getApi();
   }, []);
 
-  [...users].map((user) => {
-    console.log(user.name);
-  });
-
   return (
     <>
-      <p>Hello World</p>
-
-      {/* {[...users].map((user, i) => (
-        <li key={user + i}>{user.name}</li>
-      ))} */}
+      <h3>API fetch useStateを使う場合</h3>
 
       {[...users].map((user, i) => (
         <p key={user.id}>
